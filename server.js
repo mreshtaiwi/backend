@@ -41,7 +41,7 @@ function addFavMemeHandler(req, res) {
 function getfavMemeHandler(req, res) {
     const sql = `SELECT * FROM memes;`;
     client.query(sql).then(data => {
-        res.status(200).json(data.rows);
+        res.status(200).send(data.rows);
     })
         .catch(error => {
             errorHandler(error, req, res);
